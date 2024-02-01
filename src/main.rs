@@ -1,23 +1,63 @@
 #[derive(Debug)]
 struct Rectangle {
     width: u32,
-    height: u32
+    height: u32,
 }
+
+impl Rectangle {
+    // all methods have '&self' parameter, and associated functions do not
+    fn calculate_area(&self) -> u32 {
+        self.width * self.height
+    }
+
+    fn can_hold(&self, other: &Rectangle) -> bool {
+        self.width > other.width || self.height > other.height
+    }
+}
+
+impl Rectangle {
+    fn square(size: u32) -> Rectangle {
+        Rectangle {
+            width: size,
+            height: size,
+        }
+    }
+}
+
 fn main() {
     let rect = Rectangle {
         width: 500,
-        height: 20
+        height: 20,
     };
 
+    let rect1 = Rectangle {
+        width: 100,
+        height: 25,
+    };
+
+    let rect2 = Rectangle {
+        width: 600,
+        height: 20,
+    };
+
+    let rect3 = Rectangle::square(32); // using associated function of struct Rectangle
+
     // printing the Struct using the prettifying pattern
-    println!("{}","-".repeat(100));
-    println!("{:#?}",rect);
-    println!("{}","=".repeat(100));
-    println!("calculated area: {}",calculate_area(&rect));
-    println!("{}","-".repeat(100));
-}
+    println!("{}", "-".repeat(100));
+    println!("{:#?}", rect);
+    
+    println!("{}", "=".repeat(100));
+    println!("calculated area: {}", rect.calculate_area());
 
-fn calculate_area(rectangle: &Rectangle) -> u32 {
-    rectangle.width * rectangle.height
-}
+    println!("{}", "=".repeat(100));
+    println!("rect can_hold rect1: {}", rect.can_hold(&rect1)); // passing the reference to not provide the ownership to the function
 
+    println!("{}", "=".repeat(100));
+    println!("rect can_hold rect2: {}", rect.can_hold(&rect2));
+
+    println!("{}", "=".repeat(100));
+    println!("Square rect3: {:#?}", rect3);
+
+    
+    println!("{}", "-".repeat(100));
+}
