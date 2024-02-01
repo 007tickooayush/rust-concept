@@ -1,28 +1,8 @@
-#[derive(Debug)]
-struct Rectangle {
-    width: u32,
-    height: u32,
-}
+mod rectangle;
+mod enums;
 
-impl Rectangle {
-    // all methods have '&self' parameter, and associated functions do not
-    fn calculate_area(&self) -> u32 {
-        self.width * self.height
-    }
+use crate::{enums::IPAddrKind, rectangle::Rectangle};
 
-    fn can_hold(&self, other: &Rectangle) -> bool {
-        self.width > other.width || self.height > other.height
-    }
-}
-
-impl Rectangle {
-    fn square(size: u32) -> Rectangle {
-        Rectangle {
-            width: size,
-            height: size,
-        }
-    }
-}
 
 fn main() {
     let rect = Rectangle {
@@ -58,6 +38,10 @@ fn main() {
     println!("{}", "=".repeat(100));
     println!("Square rect3: {:#?}", rect3);
 
+    println!("{}", "=".repeat(100));
+    const ip:IPAddrKind = IPAddrKind::V4;
+    println!("IP address type: {:#?}",ip);
     
     println!("{}", "-".repeat(100));
+    
 }
