@@ -39,8 +39,8 @@ fn main() {
     println!("Square rect3: {:#?}", rect3);
 
     println!("{}", "=".repeat(100));
-    const ip:IPAddrKind = IPAddrKind::V4;
-    println!("IP address type: {:#?}",ip);
+    const IP:IPAddrKind = IPAddrKind::V4;
+    println!("IP address type: {:#?}",IP);
     
     println!("{}", "-".repeat(100));
     
