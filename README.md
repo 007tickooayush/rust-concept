@@ -20,7 +20,7 @@ To get started with this project, follow these steps:
 
 1. Clone the repository: `git clone https://github.com/your-username/rust-concept.git`
 2. Install Rust: [https://www.rust-lang.org/tools/install](https://www.rust-lang.org/tools/install)
-3. Navigate to the project directory: `cd rust-programming-concepts`
+3. Navigate to the project directory: `cd rust-concept`
 4. Run the examples or exercises using the Rust compiler: `cargo run`
 
 ## Concepts Covered
