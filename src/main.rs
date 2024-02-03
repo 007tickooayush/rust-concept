@@ -12,13 +12,19 @@ mod types {
         y: U,
     }
 
-    impl<T,U> Point<T,U> {
-        pub fn mixup<V,W>(self, other: Point<V,W>) -> Point<T,W> {
+    impl<T, U> Point<T, U> {
+        pub fn mixup<V, W>(self, other: Point<V, W>) -> Point<T, W> {
             Point {
                 x: self.x,
                 y: other.y,
             }
         }
+    }
+
+    #[derive(Debug)]
+    pub enum Option<T> {
+        Some(T),
+        None,
     }
 
     pub fn test_types() {
@@ -40,6 +46,21 @@ mod types {
         println!("p1.x = {}, p1.y = {}", p1.x, p1.y);
         println!("p2.x = {}, p2.y = {}", p2.x, p2.y);
         println!("p3.x = {}, p3.y = {}", p3.x, p3.y);
+
+        let p4 = p1.mixup(p2);
+        println!("p4.x = {}, p4.y = {}", p4.x, p4.y);
+
+        // testing Option enum
+        let some_number = Option::Some(5);
+        let other_number = Option::Some(6.001);
+        let some_string = Option::Some("a string");
+
+        let absent_number: Option<i32> = Option::None;
+
+        println!(
+            "some_number: {:?}, other_number: {:?},  some_string: {:?}, absent_number: {:?} ",
+            some_number, other_number, some_string, absent_number
+        );
     }
 
     // making the function generic
