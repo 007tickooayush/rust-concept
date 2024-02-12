@@ -134,4 +134,36 @@ pub mod closures_mod{
             }
         }
     }
+
+    pub fn test_move_keyword(){
+
+        // ownership of x is not moved
+        {
+            let x :String = String::from("String 1 = x");
+    
+            // ownership of x is not moved
+            let equal_to_x = |z : String| z.eq(&x);
+            println!("value of x is {}",x);
+
+            let y = String::from("String 1 == x");
+
+    
+            assert!(equal_to_x(y));
+        }
+
+        {
+            let x = String::from("String 1 = x");
+    
+            // ownership of x is moved using move keyword
+            let equal_to_x = |z : String| z.eq(&x);
+            // can not use the variable now afterward (unless new variable is created by cloning it)
+    
+            let y = String::from("String 1 == x");
+
+            // error prone line
+            // println!("value of x is {}",x);
+    
+            assert!(equal_to_x(y));
+        }
+    }
 }

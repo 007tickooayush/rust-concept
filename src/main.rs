@@ -1,5 +1,5 @@
 
-use closures::closures_mod::generate_workout;
+use closures::closures_mod::{generate_workout, test_move_keyword};
 use collections::collections::test_collections;
 use error_handling::{test_file_error, test_file_error_propagation};
 use lifetimes::lifetimes_mod::test_vars_lifetime;
@@ -19,6 +19,7 @@ mod closures;
 fn main() {
 
     generate_workout(7, 2);
+    test_move_keyword();
     // test_vars_lifetime();
     // test_traits();
     // test_types();
