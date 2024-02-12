@@ -139,26 +139,26 @@ pub mod closures_mod{
 
         // ownership of x is not moved
         {
-            let x :String = String::from("String 1 = x");
+            let x  = 123123;
     
             // ownership of x is not moved
-            let equal_to_x = |z : String| z.eq(&x);
+            let equal_to_x = | z | z == x;
             println!("value of x is {}",x);
 
-            let y = String::from("String 1 == x");
+            let y = 123123;
 
     
             assert!(equal_to_x(y));
         }
 
         {
-            let x = String::from("String 1 = x");
+            let x = 321321;
     
             // ownership of x is moved using move keyword
-            let equal_to_x = |z : String| z.eq(&x);
+            let equal_to_x = | z | z == x;
             // can not use the variable now afterward (unless new variable is created by cloning it)
     
-            let y = String::from("String 1 == x");
+            let y = 321321;
 
             // error prone line
             // println!("value of x is {}",x);
