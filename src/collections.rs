@@ -1,4 +1,4 @@
-mod collections {
+pub mod collections {
     use std::collections::HashMap;
     use unicode_segmentation::UnicodeSegmentation;
 
