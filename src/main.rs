@@ -18,7 +18,7 @@ mod lifetimes;
 mod closures;
 mod iterators;
 mod smart_pointers;
-
+mod smart_pointers_deref;
 
 fn main() {
 

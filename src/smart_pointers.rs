@@ -47,7 +47,6 @@ pub mod smart_pointers {
     // }
 
 
-
     // testing Box implementation for Drop trait
 
 }
