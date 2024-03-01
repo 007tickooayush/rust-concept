@@ -13,6 +13,7 @@ use types::types_mod::{get_largest, test_types};
 use crate::concurrency_messages::concurrency_msg::{test_mpsc, test_multiple_tx};
 use crate::concurrency_state::concurrency_shred_state::{test_mutex, test_mutex_mark2};
 use crate::concurrency_threads::concurrency::{test_thread_main_vs_spawn_thread_1, test_thread_main_vs_spawn_thread_2, test_thread_main_vs_spawn_thread_3, test_thread_move};
+use crate::object_oriented::object_oriented_oop::test_average_collection;
 use crate::smart_pointers_interior_mem_safe::interior_mutability_mem_safe::test_stack_interior;
 
 mod collections;
@@ -33,10 +34,12 @@ mod smart_pointers_interior_mem_safe;
 mod concurrency_threads;
 mod concurrency_messages;
 mod concurrency_state;
+mod object_oriented;
 
 fn main() {
-    test_mutex_mark2();
+    test_average_collection();
 
+    // test_mutex_mark2();
     // test_mutex();
     // test_multiple_tx();
     // test_mpsc();
