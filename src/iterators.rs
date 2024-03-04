@@ -12,7 +12,7 @@ pub mod iterators {
         }
     }
 
-    impl Iterator for Counter {
+    impl IteratorDemo for Counter {
         type Item = u32;
         fn next(&mut self) -> Option<Self::Item> {
 
@@ -26,7 +26,7 @@ pub mod iterators {
         }
     }
 
-    pub trait Iterator {
+    pub trait IteratorDemo {
         type Item;
 
         fn next(&mut self) -> Option<Self::Item>;
@@ -51,7 +51,8 @@ pub mod iterators {
 
     #[cfg(test)]
     pub mod test_iterators{
-        use crate::iterators::{iterators::Iterator};
+        use std::iter::Iterator;
+        use crate::iterators::{iterators::IteratorDemo};
 
         use super::Counter;
 

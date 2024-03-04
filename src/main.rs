@@ -35,6 +35,8 @@ mod concurrency_threads;
 mod concurrency_messages;
 mod concurrency_state;
 mod object_oriented;
+mod inheritance;
+
 
 fn main() {
     test_average_collection();
