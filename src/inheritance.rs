@@ -22,17 +22,17 @@ pub mod inheritance_demo {
         numbers: Vec<Nu>
     }
 
-    impl <Nu> SubtractFrom<Nu> for SubtractI32<Nu> {
+    impl SubtractFrom<i32> for SubtractI32<i32> {
         type Item = i32;
 
         fn subtract_from(&self) {
             todo!()
         }
     }
-    impl<Nu: std::iter::Sum<&Nu>> AddNumbers<Nu> for AddI32<Nu> {
+    impl AddNumbers<i32> for AddI32<i32> {
         type Item = i32;
 
-        fn add_all(&self) -> Result<Nu, io::Error> {
+        fn add_all(&self) -> Result<i32, io::Error> {
             // let mut sum = 0;
             // for num in self.numbers {
             //     sum += num;

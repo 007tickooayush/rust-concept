@@ -36,6 +36,7 @@ mod concurrency_messages;
 mod concurrency_state;
 mod object_oriented;
 mod inheritance;
+mod state_design_pattern;
 
 
 fn main() {
