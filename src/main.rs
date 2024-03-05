@@ -40,8 +40,9 @@ mod state_design_pattern;
 
 
 fn main() {
-    test_average_collection();
 
+
+    // test_average_collection();
     // test_mutex_mark2();
     // test_mutex();
     // test_multiple_tx();
