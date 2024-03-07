@@ -21,6 +21,34 @@ pub mod types_mod {
         None,
     }
 
+    #[test]
+    pub fn testing_types_mark3() {
+        type MyInteger = i32;
+
+        const x: i32 = 5;
+        const y: MyInteger = 5;
+
+        println!("x + y = {}", x+y);
+        assert_eq!(x, y);
+    }
+
+    /// STATIC LIFETIME + GENERIC TYPES + TESTING RETURNING A FUNCTION
+    /// MORE COMMONLY AN ANONYMOUS FUNCTION
+    #[test]
+    pub fn testing_aliases() {
+
+        /// A function without ay return type
+        // type Thunk = Box<dyn Fn() + Send + 'static>;
+        
+        /// function type with a String return Type
+        type Thunk = Box<dyn Fn() -> String + Send + 'static>;
+
+        let new_f: Thunk = Box::new(|| String::from("Type Thunk testing...") );
+        
+        println!("{}",new_f());
+        
+    }
+
     pub fn test_types() {
         let number_list = vec![34, 50, 25, 100, 65];
 
@@ -69,5 +97,3 @@ pub mod types_mod {
         largest
     }
 }
-
-use self::types_mod::*;
