@@ -46,7 +46,7 @@ pub mod types_mod {
         let new_f: Thunk = Box::new(|| String::from("Type Thunk testing...") );
         
         println!("{}",new_f());
-        
+
     }
 
     pub fn test_types() {
