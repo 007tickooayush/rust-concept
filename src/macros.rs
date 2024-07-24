@@ -41,6 +41,13 @@ pub mod macros {
     }
 
     #[test]
+    pub fn test_some_function_str() {
+        some_lang!(String,String::from("Hello World"));
+        let val = get_the_customVal();
+        println!("The value is {}", val);
+    }
+    
+    #[test]
     pub fn test_macros() {
         bounded_impl!(i32, 0, 100);
         let i = i32::min_value_get();
