@@ -23,6 +23,22 @@ pub mod macros {
         };
     }
 
+    #[macro_export]
+    macro_rules! some_lang {
+        ($t:ty, $val:expr) => {
+            fn get_the_customVal() -> $t {
+                $val
+            }
+        };
+    }
+
+
+    #[test]
+    pub fn test_some_function() {
+        some_lang!(i32,33);
+        let val = get_the_customVal();
+        println!("The value is {}", val);
+    }
 
     #[test]
     pub fn test_macros() {
