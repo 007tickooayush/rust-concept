@@ -49,6 +49,14 @@ pub mod types_mod {
 
     }
 
+    #[test]
+    pub fn test_formats() {
+        let x = 255;
+        
+        println!(" BINARY : {:b} Hexadecimal: {:o} Octal: {:X}",x,x,x);
+    }
+
+
     pub fn test_types() {
         let number_list = vec![34, 50, 25, 100, 65];
 
